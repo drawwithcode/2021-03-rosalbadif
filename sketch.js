@@ -8,6 +8,7 @@ let emilia
 let friuli
 let liguria
 let lazio
+let lombardia
 let piemonte
 let puglia
 let sardegna
@@ -29,6 +30,7 @@ function preload() {
   friuli = loadSound ("./assets/friuli.mp3")
   liguria = loadSound ("./assets/liguria1.mp3")
   lazio = loadSound ("./assets/lazio.mp3")
+  lombardia = loadSound ("./assets/lombardia.mp4")
   piemonte = loadSound ("./assets/piemonte.mp3")
   puglia = loadSound ("./assets/puglia.mp3")
   sardegna = loadSound ("./assets/sardegna.mp3")
@@ -210,7 +212,7 @@ function draw() {
 
   if (dfriuli<12.5){
     fill("white")
-    ellipse (windowWidth/2 -90, 160, 25)
+    ellipse (windowWidth/2 -10, 170, 25)
     //image(dick, windowWidth/2 -10 , 170, 25,30)
     textSize(30)
     text("FRIULI", 170, windowHeight-95)
@@ -225,7 +227,7 @@ function draw() {
   else { 
     friuli.stop()
     fill("red")
-    ellipse (windowWidth/2 -10 ,170, 25)
+    ellipse (windowWidth/2 -10, 170, 25)
   }
 
   //LAZIO
@@ -276,6 +278,31 @@ function draw() {
     fill("red")
     ellipse (windowWidth/2 -180, 285, 25)
   }
+
+    
+  //LOMBARDIA
+
+    let dlombardia = dist(mouseX, mouseY, windowWidth/2 -150, 210)  
+   
+  
+    if (dlombardia<12.5){
+      fill("white")
+      ellipse (windowWidth/2 -150, 210, 25)
+      textSize(30)
+      text("LOMBARDIA", 170, windowHeight-95)
+      textSize(20)
+      fill(14, 32, 88)
+      text("s'et un bambo", 170, windowHeight-50)
+      if (lombardia.isPlaying()===false){
+       lombardia.play()
+      }
+   }
+    
+    else { 
+      lombardia.stop()
+      fill("red")
+      ellipse (windowWidth/2 -150, 210, 25)
+    }
 
   //PIEMONTE
 
@@ -474,8 +501,21 @@ function draw() {
     ellipse (windowWidth/2 -50, 210, 25)
   }
   
-  
-  
+  //ALTRI PALLINI
+
+ 
+  fill("red")
+ //ABRUZZO
+    ellipse (windowWidth/2 +50, 410, 25)
+
+  //MARCHE
+    ellipse (windowWidth/2 +10, 340, 25)
+
+  //MOLISE
+    ellipse (windowWidth/2 +90, 430, 25)
+
+  //VALLE D'AOSTA
+    ellipse (windowWidth/2 -240, 200, 25)
 }
     
 
